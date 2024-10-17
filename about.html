@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>About Us - Cure Finder</title>
+   <style>
+      body {
+         margin: 0;
+         padding: 0;
+         font-family: 'Arial', sans-serif;
+         overflow-x: hidden;
+      }
+
+      nav {
+         background-color: #5bc0de;
+         overflow: hidden;
+         transition: background-color 0.5s ease;
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+         display: flex;
+         justify-content: space-between; /* Align items evenly */
+         align-items: center; /* Center items vertically */
+         padding: 0 20px; /* Added padding to the nav */
+         height: 60px; /* Set height for the nav */
+      }
+
+      #webpage-name {
+         font-size: 1.5em;
+         color: white;
+         font-weight: bold;
+         margin-right: auto; /* Align webpage name to the left */
+      }
+
+      nav ul {
+         margin: 0;
+         padding: 0;
+         list-style: none;
+         display: flex; /* Use flexbox for horizontal alignment */
+         margin-left: auto; /* Move links to the right */
+      }
+
+      nav li {
+         margin: 0 10px; /* Space between links */
+      }
+
+      nav a {
+         display: block;
+         color: white;
+         text-align: center;
+         padding: 14px 16px;
+         text-decoration: none;
+         transition: color 0.3s ease;
+         line-height: 60px; /* Adjusted line height to match nav height */
+      }
+
+      nav a:hover {
+         background-color: #eee;
+         color: #d9534f;
+      }
+
+      #aboutus-section {
+         background: url('https://i.pinimg.com/564x/e8/86/c7/e886c7e4e183d639f1ce23f3bee39822.jpg') center/cover no-repeat;
+         height: 100vh;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         color: #fff;
+         text-align: center;
+         position: relative;
+      }
+
+      #aboutus-content {
+         max-width: 600px;
+         background-color: rgba(0, 0, 0, 0.6);
+         padding: 30px;
+         border-radius: 10px;
+         box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+         overflow: hidden; /* Ensure content doesn't overflow */
+      }
+
+      #aboutus-content h2 {
+         font-size: 2em;
+         margin-bottom: 20px;
+         opacity: 0;
+         transform: translateY(20px);
+         animation: fadeInUp 1s forwards;
+      }
+
+      #aboutus-content p {
+         font-size: 1.2em;
+         line-height: 1.6;
+         opacity: 0;
+         transform: translateY(20px);
+         animation: fadeInUp 1s forwards;
+      }
+
+      @keyframes fadeInUp {
+         to {
+            opacity: 1;
+            transform: translateY(0);
+         }
+      }
+   </style>
+</head>
+<body>
+
+   <nav>
+      <span id="webpage-name">Cure Finder</span>
+      <ul>
+         <li><a href="home.html">Home</a></li>
+         <li><a href="about.html">About Us</a></li>
+         <li><a href="contacts.html">Contact Us</a></li>
+      </ul>
+   </nav>
+
+   <section id="aboutus-section">
+      <div id="aboutus-content">
+         <h2>About Us</h2>
+         <p>Welcome to Cure Finder, where we aim to mainly focus on improving healthcare access in rural areas by providing a simple solution by entering the name of a disease, and we’ll recommend the right medicine. Our goal is to help rural communities overcome challenges like limited medical facilities and doctor availability, making healthcare more accessible to everyone.</p>
+      </div>
+   </section>
+
+</body>
+</html>

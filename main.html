@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Cure Finder</title>
+   <style>
+      body {
+         margin: 0;
+         padding: 0;
+         font-family: 'Arial', sans-serif;
+         overflow-x: hidden;
+         background-color: #f5f5f5; /* Set your background color */
+      }
+
+      nav {
+         background-color: #5bc0de;
+         overflow: hidden;
+         transition: background-color 0.5s ease;
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 0 20px; /* Added padding to the nav */
+         height: 50px; /* Reduced height */
+      }
+
+      #webpage-name {
+         font-size: 1.5em;
+         color: white;
+         font-weight: bold;
+         margin-right: auto; /* Align webpage name to the left */
+      }
+
+      /* Navigation links now on the right */
+      nav ul {
+         margin: 0;
+         padding: 0;
+         list-style: none;
+         display: flex;
+         margin-left: auto; /* Move links to the right */
+      }
+
+      nav li {
+         margin: 0 10px;
+      }
+
+      nav a {
+         display: block;
+         color: white;
+         text-align: center;
+         padding: 14px 16px;
+         text-decoration: none;
+         transition: color 0.3s ease;
+         line-height: 60px; /* Adjusted line height to match nav height */
+      }
+
+      nav a:hover {
+         background-color: #eee;
+         color: #d9534f;
+      }
+
+      #hero-section {
+         position: relative;
+         height: 100vh;
+         background: url('https://i.pinimg.com/564x/e4/1f/c5/e41fc56c18e4053884dd98b93e1bf143.jpg') center/cover no-repeat fixed; /* Set background to cover entire page */
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         text-align: center;
+         opacity: 0;
+         overflow: hidden;
+         color: #333;
+      }
+
+      #hero-section h1 {
+         font-size: 3em;
+         color: #fff;
+         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      }
+
+      #hero-section .cta-buttons {
+         margin-top: 20px;
+         opacity: 0;
+      }
+
+      #hero-section .cta-button {
+         display: inline-block;
+         padding: 10px 20px;
+         font-size: 1.2em;
+         text-decoration: none;
+         color: #fff;
+         background-color: #5bc0de;
+         border-radius: 5px;
+         transition: background-color 0.3s ease;
+      }
+
+      #hero-section .cta-button:hover {
+         background-color: #4cae4c;
+      }
+   </style>
+</head>
+<body>
+
+   <nav>
+      <!-- Webpage name aligned to the left -->
+      <span id="webpage-name">Cure Finder</span>
+
+      <!-- Navigation links (on the right) -->
+      <ul>
+         <li><a href="home.html">Home</a></li>
+         <li><a href="about.html">About Us</a></li>
+         <li><a href="contacts.html">Contact Us</a></li>
+      </ul>
+   </nav>
+
+   <section id="hero-section">
+      <div>
+         <h1 id="hero-text"></h1>
+         <div class="cta-buttons">
+            <a href="ss.html" class="cta-button">Problem</a>
+         </div>
+      </div>
+   </section>
+
+   <script>
+      window.addEventListener('load', function() {
+         var heroSection = document.getElementById('hero-section');
+         var heroText = document.getElementById('hero-text');
+         var ctaButtons = document.querySelector('.cta-buttons');
+         var nav = document.querySelector('nav');
+
+         heroSection.style.opacity = '1';
+
+         var text = "Discover Your Path to Healing";
+         var speed = 50;
+         var i = 0;
+
+         function typeWriter() {
+            if (i < text.length) {
+               heroText.innerHTML += text.charAt(i);
+               i++;
+               setTimeout(typeWriter, speed);
+            }
+         }
+
+         setTimeout(function() {
+            typeWriter();
+         }, 1000);
+
+         setTimeout(function() {
+            ctaButtons.style.opacity = '1';
+         }, 2000);
+
+         // Parallax scrolling effect for the hero section background
+         window.addEventListener('scroll', function() {
+            var scrollPosition = window.scrollY;
+            heroSection.style.backgroundPositionY = -scrollPosition * 0.5 + 'px';
+         });
+
+         // Change navigation bar background on scroll
+         window.addEventListener('scroll', function() {
+            var scrollPosition = window.scrollY;
+            if (scrollPosition > 100) {
+               nav.style.backgroundColor = '#d9534f';
+            } else {
+               nav.style.backgroundColor = '#5bc0de';
+            }
+         });
+
+         // Additional JavaScript for header effects
+         var headerHeight = nav.offsetHeight;
+
+         window.addEventListener('scroll', function() {
+            var scrollPosition = window.scrollY;
+            nav.style.opacity = 1 - scrollPosition / headerHeight;
+         });
+      });
+   </script>
+
+</body>
+</html>

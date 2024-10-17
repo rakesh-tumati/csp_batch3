@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Solutions</title>
+    <style>
+h2{
+    color:red;     
+
+}
+body{
+      /*background-image:url("");*/
+      background-color: #9fb9ec;
+
+}
+        table {
+            width: 100%;
+            border-collapse:none;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid black;
+        }
+        tr.hidden {
+            display: none;
+        }
+        /* Hover effect for individual cells */
+        td:hover {
+            background-color: cyan;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<center>
+<h2>Search Results for Diseases and Solutions</h2>
+</center>
+<!-- Table to display disease and treatment data -->
+<table id="diseaseTable">
+    <thead>
+        <tr>
+            <th>Disease</th>
+            <th>Symptoms</th>
+            <th>Recommended Treatment</th>
+            <th>Precautionary Measures</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Malaria</td>
+            <td>Fever, chills, nausea</td>
+            <td>Antimalarial drugs (e.g., Chloroquine)</td>
+            <td>Use of mosquito nets, insect repellents</td>
+        </tr>
+        <tr>
+            <td>Diabetes</td>
+            <td>Increased thirst, frequent urination, fatigue</td>
+            <td>Insulin therapy, oral medications</td>
+            <td>Regular blood sugar monitoring, healthy diet</td>
+        </tr>
+        <tr>
+            <td>Hypertension</td>
+            <td>Headaches, shortness of breath, nosebleeds</td>
+            <td>Antihypertensive drugs (e.g., ACE inhibitors)</td>
+            <td>Low-sodium diet, regular exercise</td>
+        </tr>
+        <tr>
+            <td>Dengue Fever</td>
+            <td>High fever, joint pain, rash</td>
+            <td>Fluid management, pain relievers (avoid NSAIDs)</td>
+            <td>Eliminate mosquito breeding grounds, use repellents</td>
+        </tr>
+<tr>
+            <td>headache</td>
+            <td>High fever, joint pain, rash</td>
+            <td>dolo,Triptans,Propranolol,bomb cream</td>
+            <td>Tension headache,Migraine,Caffeine withdrawal</td>
+        </tr><tr>
+            <td>body pains</td>
+            <td>weakness, fatigue, shivers, and fever.</td>
+            <td>Naproxen,
+Aspirin,
+Diclofenac.</td>
+            <td>Arthritis ,
+Fibromyalgia ,
+Poor circulation or cardiac disorders ,
+Hypothyroidism ,
+Lupus or other autoimmune conditions ,
+Lyme disease ,
+Stress and anxiet </td>
+        </tr>
+
+        <tr>
+            <td>Asthma</td>
+            <td>Wheezing, coughing, chest tightness</td>
+            <td>Inhalers, bronchodilators</td>
+            <td>Avoid triggers, regular use of prescribed medications</td>
+        </tr>
+        <tr>
+            <td>COVID-19</td>
+            <td>Fever, cough, difficulty breathing</td>
+            <td>Rest, antiviral medications (in severe cases)</td>
+            <td>Wearing masks, maintaining social distance</td>
+        </tr>
+        <tr>
+            <td>Flu (Influenza)</td>
+            <td>Fever, chills, muscle aches</td>
+            <td>Antiviral drugs, rest, fluids</td>
+            <td>Annual flu vaccination, hand hygiene</td>
+        </tr>
+        <tr>
+            <td>Gastroenteritis</td>
+            <td>Diarrhea, vomiting, abdominal pain</td>
+            <td>Rehydration, electrolyte solutions</td>
+            <td>Proper handwashing, clean drinking water</td>
+        </tr>
+        <tr>
+            <td>Cold</td>
+            <td>Sore throat,Headache,Myalgia,Fever,Sneezing</td>
+            <td>Acetaminophen (Tylenol) and ibuprofen (Advil, Motrin) </td>
+            <td>Honey,Salt water gargle,Ginger</td>
+        </tr>
+          <tr>
+            <td>Cough</td>
+            <td>productive, wet, or chesty cough </td>
+            <td> antitussives, expectorants, and throat lozenges</td>
+            <td>Hot soup,Honey,Salt water gargle,Herbal tea</td>
+        </tr>
+
+        <tr>
+            <td>Chickenpox</td>
+            <td>Itchy rash, fever, fatigue</td>
+            <td>Antiviral medication, calamine lotion for itching</td>
+            <td>Vaccination, avoiding contact with infected individuals</td>
+        </tr>
+        <tr>
+            <td>Typhoid Fever</td>
+            <td>Fever, stomach pain, diarrhea</td>
+            <td>Antibiotics (e.g., Ciprofloxacin)</td>
+            <td>Ensure clean drinking water, proper sanitation</td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    // Function to get the search query from the URL
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    // Function to filter the table based on the query
+    function filterTable(query) {
+        const rows = document.getElementById('diseaseTable').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+        
+        for (let i = 0; i < rows.length; i++) {
+            let rowText = rows[i].innerText.toLowerCase();
+            if (rowText.includes(query.toLowerCase())) {
+                rows[i].classList.remove('hidden');
+            } else {
+                rows[i].classList.add('hidden');
+            }
+        }
+    }
+
+    // Get the search query and filter the table when the page loads
+    window.onload = function() {
+        const searchQuery = getQueryParam('query');
+        if (searchQuery) {
+            filterTable(searchQuery);
+        }
+    }
+</script>
+
+</body>
+</html>
